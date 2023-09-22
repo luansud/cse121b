@@ -4,10 +4,10 @@
 
 /* Step 2 - Variables */
 
-let fullName = "Luã Felizola Soares De Medeiros";
+let fullName = 'Luã Felizola Soares De Medeiros';
 let currentDate = new Date();
 let currentYear = currentDate.getFullYear();
-let profilePicture = "images/Profile_Picture2.jpg";
+let profilePicture = 'images/Profile_Picture2.jpg';
 
 /* Step 3 - Element Variables */
 
@@ -19,20 +19,19 @@ let imageElement = document.getElementsByTagName("img");
 
 /* Step 4 - Adding Content */
 
-nameElement.innerHTML = "<strong>${fullName}</strong>";
+nameElement.innerHTML = `<strong>${fullName}</strong>`;
 yearElement.textContent = "${currentYear}";
 imageElement.setAttribute("src",profilePicture);
-imageElement.setAttribute("alt","Profile image ${fullName}");
+imageElement.setAttribute("alt",`Profile image ${fullName}`);
 
 /* Step 5 - Array */
 
-let favoriteFoods = ["Pizza","Assai","Hamburguer","Cuscuz"];
-
-foodElement.innerHTML = "${favoriteFoods}";
-
-let oneFood = "Tacos";
-
+let favoriteFoods = ['Pizza','Assai','Hamburguer','Cuscuz'];
+let oneFood = 'Tacos';
 favoriteFoods.push(oneFood);
+console.log(favoriteFoods)
 
+foodElement.innerHTML = `<br>${favoriteFoods}`;
+document.body.appendChild(favoriteFoods);
 
 
