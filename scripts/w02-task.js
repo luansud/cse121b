@@ -12,10 +12,9 @@ let profilePicture = 'images/Profile_Picture2.jpg';
 /* Step 3 - Element Variables */
 
 const nameElement = document.getElementById("name");
-const foodElement = document.getElementById("food");
+let foodElement = document.getElementById("food");
 let yearElement = document.querySelector("#year");
-let imageElement = document.getElementsByTagName("img");
-
+let imageElement = document.getElementById("img");
 
 /* Step 4 - Adding Content */
 
@@ -26,12 +25,13 @@ imageElement.setAttribute("alt",`Profile image ${fullName}`);
 
 /* Step 5 - Array */
 
-let favoriteFoods = ['Pizza','Assai','Hamburguer','Cuscuz'];
+let favoriteFoods = ['Pizza',' Assai',' Hamburguer',' Cuscuz'];
 let oneFood = 'Tacos';
 favoriteFoods.push(oneFood);
-console.log(favoriteFoods)
 
-foodElement.innerHTML = `<br>${favoriteFoods}`;
-document.body.appendChild(favoriteFoods);
-
+foodElement.innerHTML += `<br><p>${favoriteFoods}</p>`;
+favoriteFoods.shift();
+foodElement.innerHTML += `<br><p>${favoriteFoods}</p>`;
+favoriteFoods.pop();
+foodElement.innerHTML += `<br><p>${favoriteFoods}</p>`;
 
