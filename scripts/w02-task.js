@@ -19,7 +19,7 @@ let imageElement = document.getElementById("img");
 /* Step 4 - Adding Content */
 
 nameElement.innerHTML = `<strong>${fullName}</strong>`;
-yearElement.textContent = "${currentYear}";
+yearElement.textContent = `${currentYear}`;
 imageElement.setAttribute("src",profilePicture);
 imageElement.setAttribute("alt",`Profile image ${fullName}`);
 
@@ -29,9 +29,9 @@ let favoriteFoods = ['Pizza',' Assai',' Hamburguer',' Cuscuz'];
 let oneFood = 'Tacos';
 favoriteFoods.push(oneFood);
 
-foodElement.innerHTML += `<br><p>${favoriteFoods}</p>`;
+foodElement.innerHTML += `<br>${favoriteFoods}`;
 favoriteFoods.shift();
-foodElement.innerHTML += `<br><p>${favoriteFoods}</p>`;
+foodElement.innerHTML += `<br>${favoriteFoods}`;
 favoriteFoods.pop();
-foodElement.innerHTML += `<br><p>${favoriteFoods}</p>`;
+foodElement.innerHTML += `<br>${favoriteFoods}`;
 
