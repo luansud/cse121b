@@ -27,16 +27,18 @@ document.querySelector('#subtractNumbers').addEventListener('click', subtractNum
 
 /* Arrow Function - Multiply Numbers */
 let multiply = (number1,number2) => number1 * number2;
-const multiplyNumbers = (mulNumber1=document.querySelector('#factor1').value,mulNumber2=document.querySelector('#factor2').value) => document.querySelector('#product').value = multiply(mulNumber1,mulNumber2);
+let multiplyNumbers = (mulNumber1=document.querySelector('#factor1').value, mulNumber2=document.querySelector('#factor2').value) => document.querySelector('#product').value = multiply(mulNumber1,mulNumber2);
 
 document.querySelector('#multiplyNumbers').addEventListener('click', multiplyNumbers);
 
 /* Open Function Use - Divide Numbers */
-let divide = (number1,number2) => number1 / number2;
+function divide(number1, number2){
+    return number1 / number2;
+}
 function divideNumbers(){
     let divNumber1 = Number(document.querySelector('#dividend').value);
     let divNumber2 = Number(document.querySelector('#divisor').value);
-    document.querySelector('#quotient').value = multiply(divNumber1,divNumber2);
+    document.querySelector('#quotient').value = divide(divNumber1,divNumber2);
 }
 document.querySelector('#divideNumbers').addEventListener('click', divideNumbers);
 
@@ -60,4 +62,4 @@ document.querySelector('#sumOfArray').innerHTML = numbersArray.reduce((sum,numbe
 /* Output Multiplied by 2 Array */
 document.querySelector('#multiplied').innerHTML = numbersArray.map(number => number*2);
 /* Output Sum of Multiplied by 2 Array */
-document.querySelector('#sumOfMultiplied').innerHTML = numbersArray.reduce(numbersArray.map(number => number*2));
+document.querySelector('#sumOfMultiplied').innerHTML = numbersArray.map(number => number*2).reduce((sum,number) => sum + number);
