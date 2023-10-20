@@ -47,7 +47,7 @@ const sortBy = (temples) => {
             break;
       
         case "older":
-            displayTemples(temples.filter(temple => parseInt(temple.dedicated) < new Date(1950, 0, 1)));
+            displayTemples(temples.filter(temple => (new Date(temple.dedicated) < new Date(1950, 0, 1))));
             break;
       
         case "all":
