@@ -6,13 +6,12 @@ let templeList = [];
 
 /* async displayTemples Function */
 const displayTemples = (temples) => {
-    templeList.forEach((temple) => {
-        const article = document.createElement("article");
-
-        const name = document.createElement("h3");
+    temples.forEach(temple => {
+        let article = document.createElement("article");
+        let name = document.createElement("h3");
         name.innerText = temple.templeName;
 
-        const imageTemple = document.createElement("img");
+        let imageTemple = document.createElement("img");
         imageTemple.src = temple.imageUrl;
         imageTemple.alt = temple.location;
 
@@ -21,15 +20,13 @@ const displayTemples = (temples) => {
 
         templesElement.appendChild(article);
     });
-};
+}
 
 /* async getTemples Function using fetch()*/
 const getTemples = async() => {
     const response = await fetch("https://byui-cse.github.io/cse121b-ww-course/resources/temples.json");
     templeList = await response.json();
-
     displayTemples(templeList);
-    console.log(templeList);
 };
 
 /* reset Function */
@@ -39,11 +36,8 @@ const reset = () => {
 
 /* sortBy Function */
 const sortBy = (temples) => {
-    reset("article");
-    let menu = document.getElementById("#sortBy");
-    let filter = menu.value;
-
-    switch (filter) {
+    reset();
+    switch (document.querySelector("#sortBy").value) {
         case "utah":
             displayTemples(temples.filter(temple => temple.location.includes("Utah")));
             break;
