@@ -46,8 +46,8 @@ const sortBy = (temples) => {
             displayTemples(temples.filter(temple => !temple.location.includes("Utah")));
             break;
       
-        case "mais antigo":
-            displayTemples(temples.filter(temple => temple.dedicatedDate < new Date(1950, 0, 1)));
+        case "older":
+            displayTemples(temples.filter(temple => parseInt(temple.dedicated) < new Date(1950, 0, 1)));
             break;
       
         case "all":
